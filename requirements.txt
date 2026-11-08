@@ -1,0 +1,12 @@
+# Dependencias del repo de aprendizaje.
+# Se irán añadiendo a medida que avances en la ruta.
+
+# Módulo actual: Fundamentos + Pruebas
+pytest==8.3.4
+
+# --- Próximos módulos (descomentar cuando lleguemos) ---
+# numpy
+# pandas
+# matplotlib
+# seaborn
+# scikit-learn

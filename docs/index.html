@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retos Python — Oneyver Rodriguez</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel-2:#1c2330; --border:#2a3240;
+    --text:#e6edf3; --muted:#9aa7b4; --accent:#3fb950; --accent-2:#58a6ff;
+    --code:#0b0f14; --chip:#21262d;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f6f8fa; --panel:#ffffff; --panel-2:#f0f3f6; --border:#d0d7de;
+      --text:#1f2328; --muted:#636c76; --accent:#1a7f37; --accent-2:#0969da;
+      --code:#f6f8fa; --chip:#eaeef2;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 64px}
+  header{
+    text-align:center; padding:56px 16px 40px;
+    background:linear-gradient(180deg,var(--panel-2),transparent);
+    border-bottom:1px solid var(--border);
+  }
+  header h1{margin:0 0 8px; font-size:2rem}
+  header p{margin:0; color:var(--muted)}
+  .snake{font-size:2.6rem}
+  h2{margin:40px 0 4px; font-size:1.3rem}
+  .section-sub{color:var(--muted); margin:0 0 16px}
+  .roadmap{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
+  .step{
+    background:var(--chip); border:1px solid var(--border); border-radius:999px;
+    padding:4px 12px; font-size:.85rem; color:var(--muted);
+  }
+  .step.active{color:var(--text); border-color:var(--accent); }
+  .card{
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:20px; margin:16px 0;
+  }
+  .card-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .num{
+    background:var(--accent-2); color:#fff; font-weight:700; border-radius:8px;
+    width:34px; height:34px; display:grid; place-items:center; flex:none;
+  }
+  .card h3{margin:0; font-size:1.1rem}
+  .tag{
+    font-size:.72rem; color:var(--muted); border:1px solid var(--border);
+    border-radius:999px; padding:2px 10px;
+  }
+  .enunciado{margin:14px 0}
+  pre{
+    background:var(--code); border:1px solid var(--border); border-radius:8px;
+    padding:14px; overflow:auto; font-size:.85rem; margin:8px 0 0;
+    font-family:"SF Mono",SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  code{font-family:"SF Mono",SFMono-Regular,Consolas,Menlo,monospace}
+  details{margin-top:12px; border-top:1px dashed var(--border); padding-top:12px}
+  summary{cursor:pointer; color:var(--accent-2); font-weight:600}
+  .file{color:var(--muted); font-size:.8rem}
+  .how{background:var(--panel-2); border-radius:12px; padding:20px; margin-top:24px}
+  footer{text-align:center; color:var(--muted); font-size:.85rem; margin-top:48px}
+  a{color:var(--accent-2)}
+</style>
+</head>
+<body>
+<header>
+  <div class="snake">🐍</div>
+  <h1>Retos de Python</h1>
+  <p>Ruta de aprendizaje de Oneyver Rodriguez · rumbo a Ciencia de Datos</p>
+</header>
+
+<div class="wrap">
+
+  <h2>Progreso de la ruta</h2>
+  <p class="section-sub">Alineada con la Escuela de Python de Platzi.</p>
+  <div class="roadmap">
+    <span class="step active">1 · Fundamentos</span>
+    <span class="step">2 · Control de flujo</span>
+    <span class="step">3 · Funciones y errores</span>
+    <span class="step">4 · Estructuras de datos</span>
+    <span class="step">5 · Ficheros y módulos</span>
+    <span class="step">6 · Pruebas y POO</span>
+    <span class="step">7 · NumPy</span>
+    <span class="step">8 · pandas</span>
+    <span class="step">9 · Visualización</span>
+    <span class="step">10 · Machine Learning</span>
+  </div>
+
+  <h2>Bloque 1 — Fundamentos</h2>
+  <p class="section-sub">
+    Resuelve cada reto en su archivo <code>.py</code> y pon los tests en verde con
+    <code>pytest</code>. Los tests que debe pasar tu solución están abajo.
+  </p>
+
+  <!-- RETO 01 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">01</div>
+      <h3>Variables y asignación múltiple</h3>
+      <span class="tag">variables</span>
+    </div>
+    <div class="enunciado">
+      Implementa <code>intercambiar(a, b)</code> que devuelva una tupla
+      <code>(b, a)</code> usando <strong>una sola línea</strong> de asignación
+      múltiple (sin variable temporal).
+    </div>
+    <div class="file">📄 retos/01_fundamentos/reto_01_variables.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>intercambiar(1, 2)        == (2, 1)
+intercambiar("x", "y")    == ("y", "x")
+intercambiar(3.5, True)   == (True, 3.5)
+isinstance(intercambiar(1, 2), tuple)   # True</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 02 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">02</div>
+      <h3>Tipos de datos (con trampa)</h3>
+      <span class="tag">tipos</span>
+    </div>
+    <div class="enunciado">
+      Implementa <code>clasificar(valor)</code> que devuelva, como string:
+      <code>"booleano"</code>, <code>"entero"</code>, <code>"flotante"</code>,
+      <code>"complejo"</code> o <code>"texto"</code>.
+      ⚠️ En Python <code>bool</code> es subclase de <code>int</code>: comprueba el
+      booleano <strong>antes</strong> que el entero.
+    </div>
+    <div class="file">📄 retos/01_fundamentos/reto_02_tipos.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>clasificar(True)     == "booleano"   # ¡no "entero"!
+clasificar(10)       == "entero"
+clasificar(3.14)     == "flotante"
+clasificar(2 + 3j)   == "complejo"
+clasificar("hola")   == "texto"</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 03 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">03</div>
+      <h3>Manipulación de texto</h3>
+      <span class="tag">strings</span>
+    </div>
+    <div class="enunciado">
+      Implementa <code>normalizar_usuario(texto)</code> que quite los espacios de
+      los extremos y pase todo a minúsculas. Ojo: <code>strip()</code> no toca los
+      espacios internos.
+    </div>
+    <div class="file">📄 retos/01_fundamentos/reto_03_texto.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>normalizar_usuario("  Oneyver  ")     == "oneyver"
+normalizar_usuario("JUAN PEREZ")      == "juan perez"
+normalizar_usuario("  Luis Garcia  ") == "luis garcia"
+normalizar_usuario("\tAna\n")         == "ana"</code></pre>
+    </details>
+  </div>
+
+  <div class="how">
+    <h2 style="margin-top:0">¿Cómo los ejecuto?</h2>
+    <pre><code># 1. Entorno virtual (una sola vez)
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# 2. Corre los tests del bloque
+pytest retos/01_fundamentos -v</code></pre>
+    <p style="margin-bottom:0; color:var(--muted)">
+      Todo en verde = bloque superado. Empiezan en rojo a propósito.
+    </p>
+  </div>
+
+  <footer>
+    Más retos a medida que avance la ruta · Proyecto paralelo:
+    el <strong>Analizador Deportivo</strong> 🏟️
+  </footer>
+
+</div>
+</body>
+</html>

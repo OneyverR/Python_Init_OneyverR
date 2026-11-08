@@ -1,0 +1,25 @@
+{
+  // --- Testing: pytest integrado en el panel "Testing" (matraz) de VS Code ---
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["retos"],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+  // --- Consola en UTF-8: arregla los acentos/ñ al ejecutar (Windows cp1252) ---
+  "terminal.integrated.env.windows": {
+    "PYTHONUTF8": "1"
+  },
+
+  // --- Que el explorador no se llene de carpetas de caché ---
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  },
+
+  // --- Calidad de vida al editar Python ---
+  "[python]": {
+    "editor.rulers": [79],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  }
+}
