@@ -27,6 +27,4 @@ b_nuevo = None
 
 a_nuevo, b_nuevo = b, a
 
-print(a_nuevo,b_nuevo)
-
 
