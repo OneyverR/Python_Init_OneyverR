@@ -22,7 +22,11 @@ Resultado esperado:
 a = 5
 b = 9
 
-# TODO: en UNA sola línea, crea a_nuevo y b_nuevo con los valores intercambiados.
-# Pista: nombre1, nombre2 = valor2, valor1
 a_nuevo = None
 b_nuevo = None
+
+a_nuevo, b_nuevo = b, a
+
+print(a_nuevo,b_nuevo)
+
+

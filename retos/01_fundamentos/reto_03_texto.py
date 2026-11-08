@@ -24,10 +24,12 @@ frase = "Me gusta programar en Python"
 
 # TODO 1: limpia usuario_crudo: sin espacios en los extremos y en minúsculas
 # Pista: puedes encadenar .strip() y .lower()
-usuario = None
+usuario = usuario_crudo.strip()
+usuario = usuario.lower()
+print(usuario)
 
 # TODO 2: cuántos caracteres tiene frase
-longitud = None
+longitud = len(frase)
 
 # TODO 3: ¿la palabra "Python" está dentro de frase? (debe quedar True o False)
-tiene_python = None
+tiene_python = "Python" in frase

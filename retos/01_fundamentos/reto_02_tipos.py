@@ -25,10 +25,10 @@ flotante = 9.99
 entero = 7
 
 # TODO 1: convierte el texto precio_texto a un número entero
-precio_entero = None
+precio_entero = int(precio_texto)
 
 # TODO 2: convierte flotante a entero (recuerda: se trunca el decimal)
-flotante_truncado = None
+flotante_truncado = int(flotante)
 
 # TODO 3: convierte entero a flotante
-entero_flotante = None
+entero_flotante = float(entero)
