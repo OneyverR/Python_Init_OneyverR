@@ -67,6 +67,31 @@
   .how{background:var(--panel-2); border-radius:12px; padding:20px; margin-top:24px}
   footer{text-align:center; color:var(--muted); font-size:.85rem; margin-top:48px}
   a{color:var(--accent-2)}
+
+  /* --- Marcador de progreso --- */
+  .progress-box{
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:16px 20px; margin:16px 0 8px;
+  }
+  .progress-head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:10px; font-size:.9rem; color:var(--muted);
+  }
+  .progress-head strong{color:var(--text); font-size:1rem}
+  .bar{height:10px; background:var(--chip); border-radius:999px; overflow:hidden}
+  .bar > span{
+    display:block; height:100%; width:0; background:var(--accent);
+    border-radius:999px; transition:width .35s ease;
+  }
+  .toggle{
+    margin-left:auto; display:inline-flex; align-items:center; gap:6px;
+    cursor:pointer; font-size:.8rem; color:var(--muted); user-select:none;
+    border:1px solid var(--border); border-radius:999px; padding:4px 10px;
+  }
+  .toggle input{accent-color:var(--accent); cursor:pointer; margin:0}
+  .card.done{border-color:var(--accent)}
+  .card.done .num{background:var(--accent)}
+  .card.done .toggle{color:var(--accent); border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -97,14 +122,24 @@
   <p class="section-sub">
     Resuelve cada reto en su archivo <code>.py</code> y pon los tests en verde con
     <code>pytest</code>. Los tests que debe pasar tu solución están abajo.
+    Marca cada reto al superarlo: tu progreso se guarda en este navegador.
   </p>
 
+  <div class="progress-box">
+    <div class="progress-head">
+      <span>Tu progreso en este bloque</span>
+      <strong id="progress-label">0 / 0</strong>
+    </div>
+    <div class="bar"><span id="progress-fill"></span></div>
+  </div>
+
   <!-- RETO 01 -->
-  <div class="card">
+  <div class="card" data-reto="r01">
     <div class="card-head">
       <div class="num">01</div>
       <h3>Asignación múltiple</h3>
       <span class="tag">variables</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r01"> Completado</label>
     </div>
     <div class="enunciado">
       Partiendo de <code>a = 5</code> y <code>b = 9</code>, crea las variables
@@ -120,11 +155,12 @@ b_nuevo == 5    # el valor que tenía a</code></pre>
   </div>
 
   <!-- RETO 02 -->
-  <div class="card">
+  <div class="card" data-reto="r02">
     <div class="card-head">
       <div class="num">02</div>
       <h3>Conversión de tipos</h3>
       <span class="tag">tipos</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r02"> Completado</label>
     </div>
     <div class="enunciado">
       Dados <code>precio_texto = "1500"</code>, <code>flotante = 9.99</code> y
@@ -141,11 +177,12 @@ entero_flotante    == 7.0    # entero -> flotante</code></pre>
   </div>
 
   <!-- RETO 03 -->
-  <div class="card">
+  <div class="card" data-reto="r03">
     <div class="card-head">
       <div class="num">03</div>
       <h3>Métodos de strings</h3>
       <span class="tag">strings</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r03"> Completado</label>
     </div>
     <div class="enunciado">
       Dados <code>usuario_crudo = "   Oneyver_Dev   "</code> y una
@@ -182,5 +219,44 @@ pytest retos/01_fundamentos -v</code></pre>
   </footer>
 
 </div>
+
+<script>
+  (function () {
+    var KEY = "retos_fundamentos_progreso";
+    var checks = document.querySelectorAll(".chk");
+    var total = checks.length;
+    var fill = document.getElementById("progress-fill");
+    var label = document.getElementById("progress-label");
+
+    // Carga el estado guardado (si el navegador lo permite)
+    var state = {};
+    try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+
+    function render() {
+      var done = 0;
+      checks.forEach(function (chk) {
+        var id = chk.getAttribute("data-reto");
+        var card = chk.closest(".card");
+        var isDone = !!state[id];
+        chk.checked = isDone;
+        card.classList.toggle("done", isDone);
+        if (isDone) done++;
+      });
+      var pct = total ? Math.round((done / total) * 100) : 0;
+      if (fill) fill.style.width = pct + "%";
+      if (label) label.textContent = done + " / " + total;
+    }
+
+    checks.forEach(function (chk) {
+      chk.addEventListener("change", function () {
+        state[chk.getAttribute("data-reto")] = chk.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+        render();
+      });
+    });
+
+    render();
+  })();
+</script>
 </body>
 </html>
