@@ -1,22 +1,28 @@
 """
-Reto 01 — Variables y asignación múltiple
-==========================================
+Reto 01 — Asignación múltiple
+=============================
 
 Python permite intercambiar dos valores SIN usar una variable temporal,
-gracias a la asignación múltiple (desempaquetado de tuplas).
+gracias a la asignación múltiple:  a, b = b, a
 
-Implementa `intercambiar(a, b)` para que devuelva una tupla `(b, a)`
-usando una sola línea de asignación múltiple.
+Partes de datos ya definidas (no las cambies):
+    a = 5
+    b = 9
 
-Ejemplos:
-    intercambiar(1, 2)        -> (2, 1)
-    intercambiar("x", "y")    -> ("y", "x")
-    intercambiar(3.5, True)   -> (True, 3.5)
+Tu tarea: crea dos variables, `a_nuevo` y `b_nuevo`, que contengan los
+valores de `a` y `b` INTERCAMBIADOS, usando asignación múltiple en una
+sola línea.
 
-Pista: en Python puedes escribir  a, b = b, a
+Resultado esperado:
+    a_nuevo  ->  9   (el valor que tenía b)
+    b_nuevo  ->  5   (el valor que tenía a)
 """
 
+# Datos de partida (no los modifiques)
+a = 5
+b = 9
 
-def intercambiar(a, b):
-    # TODO: devuelve (b, a) usando asignación múltiple
-    pass
+# TODO: en UNA sola línea, crea a_nuevo y b_nuevo con los valores intercambiados.
+# Pista: nombre1, nombre2 = valor2, valor1
+a_nuevo = None
+b_nuevo = None

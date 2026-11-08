@@ -1,17 +1,15 @@
-from reto_01_variables import intercambiar
+from reto_01_variables import a, b, a_nuevo, b_nuevo
 
 
-def test_intercambia_numeros():
-    assert intercambiar(1, 2) == (2, 1)
+def test_a_nuevo_toma_el_valor_de_b():
+    assert a_nuevo == 9
 
 
-def test_intercambia_strings():
-    assert intercambiar("x", "y") == ("y", "x")
+def test_b_nuevo_toma_el_valor_de_a():
+    assert b_nuevo == 5
 
 
-def test_intercambia_tipos_distintos():
-    assert intercambiar(3.5, True) == (True, 3.5)
-
-
-def test_devuelve_una_tupla():
-    assert isinstance(intercambiar(1, 2), tuple)
+def test_realmente_estan_intercambiados():
+    # a_nuevo debe tener lo de b, y b_nuevo lo de a
+    assert a_nuevo == b
+    assert b_nuevo == a

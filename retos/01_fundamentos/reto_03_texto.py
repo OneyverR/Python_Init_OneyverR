@@ -1,25 +1,33 @@
 """
-Reto 03 — Manipulación de texto
-===============================
+Reto 03 — Métodos de strings
+============================
 
-Implementa `normalizar_usuario(texto)` que prepare un nombre de usuario:
+Repasa lo que viste en texto.py: .strip() quita espacios de los extremos,
+.lower() pasa a minúsculas, len() cuenta caracteres y el operador `in`
+dice si un texto está dentro de otro.
 
-    1. Elimina los espacios en blanco al inicio y al final.
-    2. Pasa todo a minúsculas.
+Datos de partida (no los cambies):
+    usuario_crudo = "   Oneyver_Dev   "
+    frase = "Me gusta programar en Python"
 
-Importante: `strip()` solo quita los espacios de los EXTREMOS, no los
-internos. "  Juan Perez  " debe quedar "juan perez" (el espacio del medio
-se conserva).
+Tu tarea: crea las tres variables pedidas.
 
-Ejemplos:
-    normalizar_usuario("  Oneyver  ")      -> "oneyver"
-    normalizar_usuario("JUAN PEREZ")       -> "juan perez"
-    normalizar_usuario("\tAna\n")          -> "ana"
-
-Pista: encadena los métodos .strip() y .lower().
+Resultados esperados:
+    usuario       ->  "oneyver_dev"   (sin espacios en los extremos y en minúsculas)
+    longitud      ->  28              (número de caracteres de frase)
+    tiene_python  ->  True            (¿está la palabra "Python" en frase?)
 """
 
+# Datos de partida (no los modifiques)
+usuario_crudo = "   Oneyver_Dev   "
+frase = "Me gusta programar en Python"
 
-def normalizar_usuario(texto):
-    # TODO: quita espacios de los extremos y pasa a minúsculas
-    pass
+# TODO 1: limpia usuario_crudo: sin espacios en los extremos y en minúsculas
+# Pista: puedes encadenar .strip() y .lower()
+usuario = None
+
+# TODO 2: cuántos caracteres tiene frase
+longitud = None
+
+# TODO 3: ¿la palabra "Python" está dentro de frase? (debe quedar True o False)
+tiene_python = None

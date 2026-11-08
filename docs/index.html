@@ -103,21 +103,19 @@
   <div class="card">
     <div class="card-head">
       <div class="num">01</div>
-      <h3>Variables y asignación múltiple</h3>
+      <h3>Asignación múltiple</h3>
       <span class="tag">variables</span>
     </div>
     <div class="enunciado">
-      Implementa <code>intercambiar(a, b)</code> que devuelva una tupla
-      <code>(b, a)</code> usando <strong>una sola línea</strong> de asignación
-      múltiple (sin variable temporal).
+      Partiendo de <code>a = 5</code> y <code>b = 9</code>, crea las variables
+      <code>a_nuevo</code> y <code>b_nuevo</code> con los valores
+      <strong>intercambiados</strong>, usando asignación múltiple en una sola línea.
     </div>
     <div class="file">📄 retos/01_fundamentos/reto_01_variables.py</div>
     <details>
       <summary>Ver tests que debe pasar</summary>
-<pre><code>intercambiar(1, 2)        == (2, 1)
-intercambiar("x", "y")    == ("y", "x")
-intercambiar(3.5, True)   == (True, 3.5)
-isinstance(intercambiar(1, 2), tuple)   # True</code></pre>
+<pre><code>a_nuevo == 9    # el valor que tenía b
+b_nuevo == 5    # el valor que tenía a</code></pre>
     </details>
   </div>
 
@@ -125,24 +123,20 @@ isinstance(intercambiar(1, 2), tuple)   # True</code></pre>
   <div class="card">
     <div class="card-head">
       <div class="num">02</div>
-      <h3>Tipos de datos (con trampa)</h3>
+      <h3>Conversión de tipos</h3>
       <span class="tag">tipos</span>
     </div>
     <div class="enunciado">
-      Implementa <code>clasificar(valor)</code> que devuelva, como string:
-      <code>"booleano"</code>, <code>"entero"</code>, <code>"flotante"</code>,
-      <code>"complejo"</code> o <code>"texto"</code>.
-      ⚠️ En Python <code>bool</code> es subclase de <code>int</code>: comprueba el
-      booleano <strong>antes</strong> que el entero.
+      Dados <code>precio_texto = "1500"</code>, <code>flotante = 9.99</code> y
+      <code>entero = 7</code>, crea las conversiones pedidas. Recuerda:
+      <code>int()</code> sobre un flotante <strong>trunca</strong> el decimal, no redondea.
     </div>
     <div class="file">📄 retos/01_fundamentos/reto_02_tipos.py</div>
     <details>
       <summary>Ver tests que debe pasar</summary>
-<pre><code>clasificar(True)     == "booleano"   # ¡no "entero"!
-clasificar(10)       == "entero"
-clasificar(3.14)     == "flotante"
-clasificar(2 + 3j)   == "complejo"
-clasificar("hola")   == "texto"</code></pre>
+<pre><code>precio_entero      == 1500   # texto -> entero
+flotante_truncado  == 9      # 9.99 -> 9 (trunca, no redondea)
+entero_flotante    == 7.0    # entero -> flotante</code></pre>
     </details>
   </div>
 
@@ -150,21 +144,21 @@ clasificar("hola")   == "texto"</code></pre>
   <div class="card">
     <div class="card-head">
       <div class="num">03</div>
-      <h3>Manipulación de texto</h3>
+      <h3>Métodos de strings</h3>
       <span class="tag">strings</span>
     </div>
     <div class="enunciado">
-      Implementa <code>normalizar_usuario(texto)</code> que quite los espacios de
-      los extremos y pase todo a minúsculas. Ojo: <code>strip()</code> no toca los
-      espacios internos.
+      Dados <code>usuario_crudo = "   Oneyver_Dev   "</code> y una
+      <code>frase</code>, crea: <code>usuario</code> (limpio y en minúsculas),
+      <code>longitud</code> (nº de caracteres) y <code>tiene_python</code>
+      (si contiene la palabra "Python").
     </div>
     <div class="file">📄 retos/01_fundamentos/reto_03_texto.py</div>
     <details>
       <summary>Ver tests que debe pasar</summary>
-<pre><code>normalizar_usuario("  Oneyver  ")     == "oneyver"
-normalizar_usuario("JUAN PEREZ")      == "juan perez"
-normalizar_usuario("  Luis Garcia  ") == "luis garcia"
-normalizar_usuario("\tAna\n")         == "ana"</code></pre>
+<pre><code>usuario       == "oneyver_dev"
+longitud      == 28
+tiene_python  == True</code></pre>
     </details>
   </div>
 
