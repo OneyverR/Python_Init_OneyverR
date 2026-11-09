@@ -118,20 +118,20 @@
     <span class="step">10 · Machine Learning</span>
   </div>
 
+  <div class="progress-box">
+    <div class="progress-head">
+      <span>Tu progreso en los retos</span>
+      <strong id="progress-label">0 / 0</strong>
+    </div>
+    <div class="bar"><span id="progress-fill"></span></div>
+  </div>
+
   <h2>Bloque 1 — Fundamentos</h2>
   <p class="section-sub">
     Resuelve cada reto en su archivo <code>.py</code> y pon los tests en verde con
     <code>pytest</code>. Los tests que debe pasar tu solución están abajo.
     Marca cada reto al superarlo: tu progreso se guarda en este navegador.
   </p>
-
-  <div class="progress-box">
-    <div class="progress-head">
-      <span>Tu progreso en este bloque</span>
-      <strong id="progress-label">0 / 0</strong>
-    </div>
-    <div class="bar"><span id="progress-fill"></span></div>
-  </div>
 
   <!-- RETO 01 -->
   <div class="card" data-reto="r01">
@@ -199,6 +199,99 @@ tiene_python  == True</code></pre>
     </details>
   </div>
 
+  <h2>Bloque 2 — Operadores, booleanos y texto</h2>
+  <p class="section-sub">
+    Operadores aritméticos y de comparación, booleanos (<code>bool()</code>) y más
+    manejo de texto: slicing, <code>replace</code> y <code>split</code>.
+  </p>
+
+  <!-- RETO 04 -->
+  <div class="card" data-reto="r04">
+    <div class="card-head">
+      <div class="num">04</div>
+      <h3>Operadores aritméticos</h3>
+      <span class="tag">operadores</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r04"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>a = 17</code> y <code>b = 5</code>, calcula <code>cociente_entero</code>
+      (<code>//</code>), <code>residuo</code> (<code>%</code>) y <code>es_divisible</code>
+      (¿el residuo es 0?).
+    </div>
+    <div class="file">📄 retos/02_operadores/reto_04_operadores.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>cociente_entero == 3       # 17 // 5
+residuo         == 2       # 17 % 5
+es_divisible    == False   # el residuo no es 0</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 05 -->
+  <div class="card" data-reto="r05">
+    <div class="card-head">
+      <div class="num">05</div>
+      <h3>Comparaciones y booleanos</h3>
+      <span class="tag">booleanos</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r05"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>numero = 42</code>, <code>edad = 17</code> y <code>texto_vacio = ""</code>,
+      crea <code>es_par</code>, <code>es_mayor_edad</code> (<code>&gt;= 18</code>) y
+      <code>vacio_es_truthy</code> (<code>bool("")</code>). Todas True o False.
+    </div>
+    <div class="file">📄 retos/02_operadores/reto_05_booleanos.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>es_par          == True
+es_mayor_edad   == False
+vacio_es_truthy == False</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 06 -->
+  <div class="card" data-reto="r06">
+    <div class="card-head">
+      <div class="num">06</div>
+      <h3>Índices y slicing</h3>
+      <span class="tag">strings</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r06"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>texto = "Python"</code>, obtén <code>primera</code> (primer carácter),
+      <code>ultima</code> (último, con índice negativo) y <code>primeras_tres</code>
+      (slice de los 3 primeros).
+    </div>
+    <div class="file">📄 retos/02_operadores/reto_06_slicing.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>primera       == "P"
+ultima        == "n"
+primeras_tres == "Pyt"</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 07 -->
+  <div class="card" data-reto="r07">
+    <div class="card-head">
+      <div class="num">07</div>
+      <h3>replace() y split()</h3>
+      <span class="tag">strings</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r07"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>frase = "Me gusta Java y programar en Java"</code>, crea
+      <code>corregida</code> (cambia Java→Python), <code>palabras</code>
+      (split por espacios) y <code>num_palabras</code> (len de la lista).
+    </div>
+    <div class="file">📄 retos/02_operadores/reto_07_replace_split.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>corregida    == "Me gusta Python y programar en Python"
+num_palabras == 7</code></pre>
+    </details>
+  </div>
+
   <div class="how">
     <h2 style="margin-top:0">¿Cómo los ejecuto?</h2>
     <pre><code># 1. Entorno virtual (una sola vez)
@@ -206,8 +299,8 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# 2. Corre los tests del bloque
-pytest retos/01_fundamentos -v</code></pre>
+# 2. Corre todos los retos
+pytest retos -v</code></pre>
     <p style="margin-bottom:0; color:var(--muted)">
       Todo en verde = bloque superado. Empiezan en rojo a propósito.
     </p>
