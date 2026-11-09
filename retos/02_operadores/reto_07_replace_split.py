@@ -22,10 +22,10 @@ Resultados esperados:
 frase = "Me gusta Java y programar en Java"
 
 # TODO 1: crea una copia de frase con "Java" cambiado por "Python"
-corregida = None
+corregida = frase.replace("Java", "Python")
 
 # TODO 2: parte frase en una lista de palabras (sepáralas por los espacios)
-palabras = None
+palabras = frase.split(" ")
 
 # TODO 3: ¿cuántas palabras tiene la lista palabras?
-num_palabras = None
+num_palabras = len(palabras)

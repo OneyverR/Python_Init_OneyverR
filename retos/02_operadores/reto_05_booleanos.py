@@ -26,10 +26,10 @@ texto_vacio = ""
 
 # TODO 1: ¿numero es par? (debe quedar True o False)
 # Piensa: un número es par cuando al dividirlo entre 2 no sobra nada.
-es_par = None
+es_par = numero % 2 == 0
 
 # TODO 2: ¿la edad llega al mínimo de 18 para ser mayor de edad? (True/False)
-es_mayor_edad = None
+es_mayor_edad = edad >= 18
 
 # TODO 3: ¿una cadena vacía se considera verdadera? Conviértela a booleano.
-vacio_es_truthy = None
+vacio_es_truthy = bool(texto_vacio)

@@ -21,11 +21,11 @@ Resultados esperados:
 texto = "Python"
 
 # TODO 1: el primer carácter de texto
-primera = None
+primera = texto[0]
 
 # TODO 2: el último carácter de texto
 #         (¿cómo contaba texto2.py las posiciones desde el final?)
-ultima = None
+ultima = texto[-1]
 
 # TODO 3: los tres primeros caracteres de texto
-primeras_tres = None
+primeras_tres = texto[:3]
