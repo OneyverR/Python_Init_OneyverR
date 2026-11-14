@@ -107,7 +107,7 @@
   <p class="section-sub">Alineada con la Escuela de Python de Platzi.</p>
   <div class="roadmap">
     <span class="step active">1 · Fundamentos</span>
-    <span class="step">2 · Control de flujo</span>
+    <span class="step active">2 · Control de flujo</span>
     <span class="step">3 · Funciones y errores</span>
     <span class="step">4 · Estructuras de datos</span>
     <span class="step">5 · Ficheros y módulos</span>
@@ -289,6 +289,130 @@ primeras_tres == "Pyt"</code></pre>
       <summary>Ver tests que debe pasar</summary>
 <pre><code>corregida    == "Me gusta Python y programar en Python"
 num_palabras == 7</code></pre>
+    </details>
+  </div>
+
+  <h2>Bloque 3 — Control de flujo</h2>
+  <p class="section-sub">
+    Condicionales (<code>if</code>/<code>elif</code>/<code>else</code>), operadores
+    lógicos, <code>match</code>, y bucles <code>while</code> y <code>for</code>.
+    Aquí ya escribes varias líneas: inicializas una variable y un bucle la va actualizando.
+  </p>
+
+  <!-- RETO 08 -->
+  <div class="card" data-reto="r08">
+    <div class="card-head">
+      <div class="num">08</div>
+      <h3>Condicionales</h3>
+      <span class="tag">if/elif/else</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r08"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>nota = 85</code>, asigna a <code>letra</code> la calificación:
+      90+ → "A", 80-89 → "B", 70-79 → "C", menos de 70 → "F".
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_08_condicionales.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>letra == "B"    # porque nota = 85</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 09 -->
+  <div class="card" data-reto="r09">
+    <div class="card-head">
+      <div class="num">09</div>
+      <h3>Operadores lógicos</h3>
+      <span class="tag">and/or/not</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r09"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>edad = 20</code> y <code>tiene_licencia = True</code>, crea
+      <code>puede_conducir</code> (mayor de edad <strong>y</strong> con licencia) y
+      <code>es_menor_sin_licencia</code> (menor de edad <strong>o</strong> sin licencia).
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_09_logicos.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>puede_conducir        == True
+es_menor_sin_licencia == False</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 10 -->
+  <div class="card" data-reto="r10">
+    <div class="card-head">
+      <div class="num">10</div>
+      <h3>match / case</h3>
+      <span class="tag">match</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r10"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>dia = 3</code>, usa <code>match</code>/<code>case</code> para poner en
+      <code>nombre_dia</code> el día de la semana (1=Lunes … 7=Domingo), con un comodín
+      <code>case _</code> para números inválidos.
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_10_match.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>nombre_dia == "Miércoles"</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 11 -->
+  <div class="card" data-reto="r11">
+    <div class="card-head">
+      <div class="num">11</div>
+      <h3>Bucle while</h3>
+      <span class="tag">while</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r11"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>n = 100</code>, usa un <code>while</code> para sumar todos los enteros
+      de 1 a <code>n</code> y guarda el total en <code>suma</code>.
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_11_while.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>suma == 5050</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 12 -->
+  <div class="card" data-reto="r12">
+    <div class="card-head">
+      <div class="num">12</div>
+      <h3>for con range()</h3>
+      <span class="tag">for</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r12"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>numero = 5</code>, calcula el factorial (5·4·3·2·1) usando un
+      <code>for</code> con <code>range()</code> y guárdalo en <code>factorial</code>.
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_12_for_range.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>factorial == 120</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 13 -->
+  <div class="card" data-reto="r13">
+    <div class="card-head">
+      <div class="num">13</div>
+      <h3>Recorrer lista y filtrar</h3>
+      <span class="tag">for + if</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r13"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>numeros = [4, 9, 15, 2, 8, 23, 7, 42]</code>, cuenta cuántos son
+      mayores o iguales a 10 y guarda el total en <code>cuantos_grandes</code>.
+    </div>
+    <div class="file">📄 retos/03_control_flujo/reto_13_for_lista.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>cuantos_grandes == 3    # 15, 23 y 42</code></pre>
     </details>
   </div>
 
