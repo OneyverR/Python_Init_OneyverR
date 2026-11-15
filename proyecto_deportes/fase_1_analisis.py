@@ -43,24 +43,41 @@ print("=" * 44)
 #       goles, asistencias y minutos. Igual que en la Fase 0, pero con UN solo
 #       print dentro de un bucle en vez de tres copiados.
 
+for jugador in plantilla:
+    print(f"- {jugador['nombre']}: {jugador['goles']} goles, {jugador['asistencias']} asistencias ({jugador['minutos']} min)")
 
 # --- 2. Calcula los goles del equipo local sumando los de cada jugador ---
 # TODO: recorre 'plantilla' y ve acumulando los goles en 'goles_local'.
 #       Piensa con qué valor conviene empezar 'goles_local' si vas a sumar.
-goles_local = None
-
+goles_local = 0
+for jugador in plantilla:
+        goles_local += jugador['goles']
 
 # --- 3. Encuentra al máximo goleador ---
 # TODO: recorre 'plantilla' y guarda en 'nombre_goleador' el nombre del jugador
 #       con más goles. Pista: ve guardando el "máximo hasta ahora" y compáralo
 #       con el goleador de cada vuelta.
+
 nombre_goleador = None
+maximo_goles = 0
+
+for jugador in plantilla:
+    if jugador['goles'] > maximo_goles:
+        maximo_goles = jugador['goles']
+        nombre_goleador = jugador['nombre']
 
 
 # --- 4. Decide el resultado del partido ---
 # TODO: compara goles_local con goles_visitante y guarda en 'resultado' uno de:
 #       "Victoria local", "Empate" o "Victoria visitante".
 resultado = None
+
+if goles_local >  goles_visitante:
+    resultado = "Victoria local" 
+elif goles_visitante > goles_local:
+    resultado = "Victoria visitante"
+else:
+    resultado = "Empate"
 
 
 # --- Resumen final (funciona cuando completes lo de arriba) ---
