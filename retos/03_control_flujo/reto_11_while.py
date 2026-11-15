@@ -24,4 +24,9 @@ n = 100
 # TODO: con un while, acumula en 'suma' los enteros de 1 a n.
 # Piensa: necesitas un valor inicial para 'suma' y una variable que
 # avance en cada vuelta hasta pasar de n.
-suma = None
+
+suma = 0
+i = 1
+while i <= n:
+    suma += i
+    i += 1

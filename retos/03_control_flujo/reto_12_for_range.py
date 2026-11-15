@@ -20,4 +20,7 @@ numero = 5
 
 # TODO: con un for y range(), ve multiplicando y acumulando en 'factorial'.
 # Piensa: ¿con qué valor conviene empezar 'factorial' si vas a MULTIPLICAR?
-factorial = None
+factorial = 1
+
+for n_factorial in range(1, numero + 1, 1):
+    factorial *= n_factorial

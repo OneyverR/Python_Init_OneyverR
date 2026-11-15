@@ -24,3 +24,12 @@ nota = 85
 # TODO: usa if / elif / else para asignar a 'letra' la calificación correcta.
 # Piensa: ¿en qué orden conviene comprobar los rangos para no equivocarte?
 letra = None
+
+if nota >= 90:
+    letra = "A"
+elif nota >= 80:
+    letra = "B"
+elif nota >= 70:
+    letra = "C"
+else:
+    letra = "F"

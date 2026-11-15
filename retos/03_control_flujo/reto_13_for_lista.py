@@ -21,4 +21,10 @@ numeros = [4, 9, 15, 2, 8, 23, 7, 42]
 # TODO: recorre 'numeros' con un for; dentro, usa un if para detectar
 # los que cumplen la condición y ve sumando 1 en 'cuantos_grandes'.
 # Piensa: ¿con qué valor conviene empezar 'cuantos_grandes' si vas a CONTAR?
-cuantos_grandes = None
+cuantos_grandes = 0
+
+for numero in numeros:
+    if numero >= 10:
+        cuantos_grandes += 1 
+
+
