@@ -2,7 +2,7 @@
   // --- Testing: pytest integrado en el panel "Testing" (matraz) de VS Code ---
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestArgs": ["retos"],
+  "python.testing.pytestArgs": ["retos", "proyecto_deportes"],
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
 
   // --- Consola en UTF-8: arregla los acentos/ñ al ejecutar (Windows cp1252) ---
