@@ -42,17 +42,17 @@ zapatilla_asics.update({"descuento": 0.10, "envio_gratis": True})
 print(zapatilla_asics)
 
 # #Eliminar una propiedad del diccionario: usando el metodo pop(). Este metodo elimina la propiedad especificada y devuelve su valor.
-# zapatilla_asics.pop("precio")
-# print(zapatilla_asics)
+zapatilla_asics.pop("precio")
+print(zapatilla_asics)
 
 # #Popitem(): Este metodo elimina y devuelve el ultimo elemento agregado al diccionario. Dado que los diccionarios no estan ordenados, no se puede predecir que elemento se eliminara.
 
-# zapatilla_asics.popitem()
-# print(zapatilla_asics)
+zapatilla_asics.popitem()
+print(zapatilla_asics)
 
 # #clear(): Este metodo elimina todos los elementos del diccionario, dejandolo vacio.
-# zapatilla_asics.clear()
-# print(zapatilla_asics)
+zapatilla_asics.clear()
+print(zapatilla_asics)
 
 
 print("="*80)
