@@ -109,7 +109,7 @@
     <span class="step active">1 · Fundamentos</span>
     <span class="step active">2 · Control de flujo</span>
     <span class="step">3 · Funciones y errores</span>
-    <span class="step">4 · Estructuras de datos</span>
+    <span class="step active">4 · Estructuras de datos</span>
     <span class="step">5 · Ficheros y módulos</span>
     <span class="step">6 · Pruebas y POO</span>
     <span class="step">7 · NumPy</span>
@@ -413,6 +413,96 @@ es_menor_sin_licencia == False</code></pre>
     <details>
       <summary>Ver tests que debe pasar</summary>
 <pre><code>cuantos_grandes == 3    # 15, 23 y 42</code></pre>
+    </details>
+  </div>
+
+  <h2>Bloque 4 — Estructuras de datos</h2>
+  <p class="section-sub">
+    Listas, tuplas, conjuntos y diccionarios. Desde este bloque los tests incluyen
+    <strong>casos borde</strong> a propósito (duplicados, claves que no existen, orden, tipo).
+  </p>
+
+  <!-- RETO 14 -->
+  <div class="card" data-reto="r14">
+    <div class="card-head">
+      <div class="num">14</div>
+      <h3>Listas (métodos)</h3>
+      <span class="tag">listas</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r14"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>equipo = ["Portero", "Defensa", "Delantero"]</code>, añade
+      "Mediocampista" al final y "Entrenador" al principio, y guarda en
+      <code>total</code> cuántos miembros quedan. Cuida el <strong>orden</strong>.
+    </div>
+    <div class="file">📄 retos/04_estructuras/reto_14_listas.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>equipo == ["Entrenador", "Portero", "Defensa", "Delantero", "Mediocampista"]
+total  == 5</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 15 -->
+  <div class="card" data-reto="r15">
+    <div class="card-head">
+      <div class="num">15</div>
+      <h3>Tuplas</h3>
+      <span class="tag">tuplas</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r15"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>punto = (10, 20, 30)</code>, desempaqueta en <code>x, y, z</code> y crea
+      <code>punto_ampliado</code> con un 40 añadido (¡debe seguir siendo tupla!).
+    </div>
+    <div class="file">📄 retos/04_estructuras/reto_15_tuplas.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>x, y, z        == 10, 20, 30
+punto_ampliado == (10, 20, 30, 40)   # y sigue siendo tuple</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 16 -->
+  <div class="card" data-reto="r16">
+    <div class="card-head">
+      <div class="num">16</div>
+      <h3>Conjuntos</h3>
+      <span class="tag">sets</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r16"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>inscritos_python = {"Ana", "Luis", "Marta", "Ana"}</code> e
+      <code>inscritos_datos = {"Luis", "Marta", "Carlos"}</code>, halla el total único,
+      los que están en ambos, y los que están solo en Python.
+    </div>
+    <div class="file">📄 retos/04_estructuras/reto_16_conjuntos.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>total_python == 3                 # "Ana" duplicada no cuenta dos veces
+en_ambos     == {"Luis", "Marta"}
+solo_python  == {"Ana"}</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 17 -->
+  <div class="card" data-reto="r17">
+    <div class="card-head">
+      <div class="num">17</div>
+      <h3>Diccionarios</h3>
+      <span class="tag">dict</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r17"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Con <code>jugador = {"goles": 2, "asistencias": 1, "minutos": 90}</code>, obtén los
+      goles, si existe la clave "tarjetas", y la suma de todos los valores.
+    </div>
+    <div class="file">📄 retos/04_estructuras/reto_17_diccionarios.py</div>
+    <details>
+      <summary>Ver tests que debe pasar</summary>
+<pre><code>goles          == 2
+tiene_tarjetas == False    # esa clave no existe
+suma_total     == 93       # 2 + 1 + 90</code></pre>
     </details>
   </div>
 
