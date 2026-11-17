@@ -27,9 +27,12 @@ inscritos_datos = {"Luis", "Marta", "Carlos"}
 
 # TODO 1: cuántos inscritos únicos hay en Python (piensa qué pasa con el duplicado)
 total_python = None
+total_python = len(inscritos_python)
 
 # TODO 2: los que están en AMBOS cursos (la operación de "lo común")
 en_ambos = None
+en_ambos = inscritos_python.intersection(inscritos_datos)
 
 # TODO 3: los que están SOLO en Python (en Python pero no en Datos)
 solo_python = None
+solo_python = inscritos_python.difference(inscritos_datos)

@@ -27,5 +27,11 @@ x = None
 y = None
 z = None
 
+x,y,z = punto
+
 # TODO 2: crea punto_ampliado = punto con un 40 al final (sigue siendo tupla)
 punto_ampliado = None
+
+punto_ampliado = list(punto)
+punto_ampliado.append(40)
+punto_ampliado = tuple(punto_ampliado)

@@ -24,10 +24,14 @@ jugador = {"goles": 2, "asistencias": 1, "minutos": 90}
 
 # TODO 1: accede al valor de la clave "goles"
 goles = None
+goles = jugador["goles"]
 
 # TODO 2: ¿existe la clave "tarjetas"? (debe quedar True o False)
 tiene_tarjetas = None
+tiene_tarjetas = "tarjetas" in jugador
 
 # TODO 3: suma todos los valores del diccionario recorriéndolos con un for
 #         (piensa con qué valor empezar la suma, como en los acumuladores)
-suma_total = None
+suma_total = 0
+for v in jugador.values():
+    suma_total += v

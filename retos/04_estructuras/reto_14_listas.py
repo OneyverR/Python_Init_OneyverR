@@ -25,8 +25,10 @@ lo mismo, y los métodos que usas para cada uno tampoco.
 equipo = ["Portero", "Defensa", "Delantero"]
 
 # TODO 1: añade "Mediocampista" al final de equipo
+equipo.append("Mediocampista")
 
 # TODO 2: añade "Entrenador" al principio (posición 0)
+equipo.insert(0,"Entrenador")
 
 # TODO 3: guarda en 'total' cuántos miembros tiene equipo al final
-total = None
+total = len(equipo)
