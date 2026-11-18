@@ -108,9 +108,9 @@
   <div class="roadmap">
     <span class="step active">1 · Fundamentos</span>
     <span class="step active">2 · Control de flujo</span>
-    <span class="step">3 · Funciones y errores</span>
+    <span class="step active">3 · Funciones y errores</span>
     <span class="step active">4 · Estructuras de datos</span>
-    <span class="step">5 · Ficheros y módulos</span>
+    <span class="step active">5 · Ficheros y módulos</span>
     <span class="step">6 · Pruebas y POO</span>
     <span class="step">7 · NumPy</span>
     <span class="step">8 · pandas</span>
@@ -503,6 +503,118 @@ solo_python  == {"Ana"}</code></pre>
 <pre><code>goles          == 2
 tiene_tarjetas == False    # esa clave no existe
 suma_total     == 93       # 2 + 1 + 90</code></pre>
+    </details>
+  </div>
+
+  <h2>Bloque 5 — Funciones y manejo de errores</h2>
+  <p class="section-sub">
+    Funciones (<code>def</code>, <code>return</code>, parámetro por defecto), lambda,
+    <code>try</code>/<code>except</code> y manejo de archivos. <strong>Ahora resuelves
+    funciones</strong>, y los tests te prueban con muchos datos a la vez (casos borde incluidos).
+  </p>
+
+  <!-- RETO 18 -->
+  <div class="card" data-reto="r18">
+    <div class="card-head">
+      <div class="num">18</div>
+      <h3>Funciones y parámetro por defecto</h3>
+      <span class="tag">def</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r18"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Completa <code>aplicar_descuento(precio, descuento=10)</code> para que devuelva el
+      precio con el descuento (en %) aplicado. Si no se pasa, el descuento es 10%.
+    </div>
+    <div class="file">📄 retos/05_funciones/reto_18_funciones.py</div>
+    <details>
+      <summary>Ver casos que debe pasar</summary>
+<pre><code>aplicar_descuento(100)      == 90.0    # 10% por defecto
+aplicar_descuento(200, 50)  == 100.0
+aplicar_descuento(100, 0)   == 100.0   # 0% no cambia nada</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 19 -->
+  <div class="card" data-reto="r19">
+    <div class="card-head">
+      <div class="num">19</div>
+      <h3>Función sobre una lista</h3>
+      <span class="tag">def + listas</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r19"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Completa <code>promedio(numeros)</code> para que devuelva la media de la lista.
+      Caso borde: si la lista está vacía, devuelve 0 (no dividas entre cero).
+    </div>
+    <div class="file">📄 retos/05_funciones/reto_19_promedio.py</div>
+    <details>
+      <summary>Ver casos que debe pasar</summary>
+<pre><code>promedio([10, 20, 30]) == 20.0
+promedio([5])          == 5.0
+promedio([])           == 0        # caso borde</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 20 -->
+  <div class="card" data-reto="r20">
+    <div class="card-head">
+      <div class="num">20</div>
+      <h3>Lambda (fábrica de funciones)</h3>
+      <span class="tag">lambda</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r20"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Completa <code>crear_multiplicador(n)</code> para que devuelva una función (lambda)
+      que multiplique su argumento por <code>n</code>.
+    </div>
+    <div class="file">📄 retos/05_funciones/reto_20_lambda.py</div>
+    <details>
+      <summary>Ver casos que debe pasar</summary>
+<pre><code>crear_multiplicador(3)(5)  == 15
+crear_multiplicador(2)(10) == 20
+crear_multiplicador(0)(99) == 0</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 21 -->
+  <div class="card" data-reto="r21">
+    <div class="card-head">
+      <div class="num">21</div>
+      <h3>try / except</h3>
+      <span class="tag">errores</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r21"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Completa <code>division_segura(a, b)</code> para que devuelva <code>a / b</code>, pero
+      si se divide entre cero, devuelva <code>None</code> en vez de romperse.
+    </div>
+    <div class="file">📄 retos/05_funciones/reto_21_division_segura.py</div>
+    <details>
+      <summary>Ver casos que debe pasar</summary>
+<pre><code>division_segura(10, 2) == 5.0
+division_segura(0, 5)  == 0.0
+division_segura(10, 0) is None   # caso borde</code></pre>
+    </details>
+  </div>
+
+  <!-- RETO 22 -->
+  <div class="card" data-reto="r22">
+    <div class="card-head">
+      <div class="num">22</div>
+      <h3>Manejo de archivos</h3>
+      <span class="tag">archivos</span>
+      <label class="toggle"><input type="checkbox" class="chk" data-reto="r22"> Completado</label>
+    </div>
+    <div class="enunciado">
+      Completa <code>contar_lineas(ruta)</code> para que devuelva cuántas líneas tiene el
+      archivo. Si el archivo no existe, devuelve 0 (captura el error).
+    </div>
+    <div class="file">📄 retos/05_funciones/reto_22_archivos.py</div>
+    <details>
+      <summary>Ver casos que debe pasar</summary>
+<pre><code>archivo con 3 líneas -> 3
+archivo vacío        -> 0
+ruta inexistente     -> 0    # caso borde</code></pre>
     </details>
   </div>
 
