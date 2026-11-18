@@ -1,0 +1,2 @@
+Este es un ejemplo de creacion de un archivo en Python
+Este es un ejemplo de creacion de un archivo en Python

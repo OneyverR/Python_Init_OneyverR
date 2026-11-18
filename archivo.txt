@@ -1,0 +1,3 @@
+Hola, soy un archivo de texto
+Este es un ejemplo de manejo de archivos en Python
+Este es un ejemplo de agregado de contenido a un archivo en Python
