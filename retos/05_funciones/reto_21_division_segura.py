@@ -17,6 +17,7 @@ Ejemplos esperados:
 
 
 def division_segura(a, b):
-    # TODO: devuelve a / b dentro de un try; si ocurre el error de dividir
-    # entre cero, captúralo con except y devuelve None.
-    pass
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return None

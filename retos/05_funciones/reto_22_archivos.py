@@ -19,7 +19,12 @@ Ejemplos:
 
 
 def contar_lineas(ruta):
-    # TODO: abre el archivo con 'with open(ruta, "r", encoding="utf-8")',
-    # cuenta sus líneas y devuelve el total.
-    # Si el archivo no existe, captura el error y devuelve 0.
-    pass
+    try:
+        with open(ruta, "r", encoding= "utf-8") as f:
+            lineas = f.readlines()
+            return len(lineas)
+    except FileNotFoundError:
+        return 0
+
+print(contar_lineas("archivo.txt"))
+    

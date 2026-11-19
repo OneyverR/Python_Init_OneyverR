@@ -18,5 +18,4 @@ Ejemplos esperados:
 
 
 def crear_multiplicador(n):
-    # TODO: devuelve una función lambda que reciba un número y lo multiplique por n.
-    pass
+    return lambda x : x * n

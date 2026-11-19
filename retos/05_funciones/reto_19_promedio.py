@@ -18,6 +18,10 @@ Ejemplos esperados:
 
 
 def promedio(numeros):
-    # TODO: devuelve la media de 'numeros'.
-    # Recuerda manejar el caso de la lista vacía antes de dividir.
-    pass
+    try:
+        suma = 0
+        for numero in numeros:
+            suma += numero
+        return suma / len(numeros)
+    except ZeroDivisionError:
+        return 0

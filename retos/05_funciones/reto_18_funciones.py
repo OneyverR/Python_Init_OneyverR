@@ -18,6 +18,6 @@ Ejemplos esperados:
 
 
 def aplicar_descuento(precio, descuento=10):
-    # TODO: devuelve el precio con el descuento aplicado.
-    # Piensa: ¿cuánto vale ese porcentaje del precio, y qué haces con él?
-    pass
+    return precio - (precio * descuento)/100
+
+print(aplicar_descuento(0))
